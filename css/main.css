@@ -1,0 +1,459 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+*::before, *::after{
+    box-sizing:border-box;
+}
+ul , ol{
+    list-style:none;
+}
+
+
+button{
+    position:fixed;
+    bottom:80px;
+    right:80px;
+    width:80px;
+    height:40px;
+    border:2px solid #1B9AF7;
+    border-radius:10px;
+    background:none;
+    background-size:cover;
+    font-size:15px;
+    font-family: sans-serif;
+    text-align:center;
+    cursor:pointer;
+    z-index:100;
+    transition:all 0.1s;
+}
+button:active{
+    background:#1B9AF7;
+    transition:all .1s;
+}
+@media screen and (max-width:420px){
+    button{
+        border:1px solid #1B9AF7;
+        border-radius:5px;
+        width:40px;
+        height:25px;
+        right:40px;
+        font-size:13px;
+        transition:all .1s;
+    }
+}
+
+
+button:focus{
+    outline:none;
+}
+
+#topbar{
+    background-image:url('http://i1.piimg.com/588926/02ba09549f12c3b7.jpg');
+    /*border:1px solid red;*/
+    background-repeat:no-repeat;
+    background-size:cover;
+    margin:0 auto;
+}
+
+
+/*这是响应式*/
+@media screen and (max-width: 420px) {
+    #topbar {
+        height:130px;
+    }
+    #topbar > .inner{
+        width:100%;
+        height:100%;
+    }
+    
+
+    
+}
+
+
+
+
+
+#topbar > .inner{
+    max-width:960px;
+    margin:0 auto;
+    /*border:2px solid blue;*/
+}
+#topbar > .inner:after{
+    content:"";
+    display:table;
+    clear:both;
+}
+#topbar > .inner > .logo{
+    float:left;
+}
+#topbar > .inner > .logo > img{
+    vertical-align: top;
+    /*border:1px solid red;*/
+    max-width:130px;
+    height:130px;
+}
+
+#topbar > .inner > nav{
+    float:right;
+    margin-top:50px;
+}
+#topbar > .inner > nav > a{
+    text-decoration:none;
+    font-size:20px;
+    margin-left:10px;
+    color:white;;
+}
+
+@media screen and (max-width: 420px){
+    #topbar > .inner > nav{
+        width:50%;
+        float:right;
+        margin-top:35px;
+        margin-right:-20px;
+    }
+    #topbar > .inner >nav >a{
+        font-size:18px;
+    }
+}
+
+
+
+
+
+#siteBanner{
+    margin-top:5px;
+    /*border:1px solid red;*/
+}
+#siteBanner > #siteBannerSlides{
+    max-width:960px;
+    margin:0 auto;
+}
+#siteBanner > #siteBannerSlides img{
+    max-width:100%;
+    height:400px;
+}
+
+@media screen and (max-width:420px){
+    #siteBanner > #siteBannerSlides img{
+        height:171px;
+    }
+
+}
+
+
+
+#siteBanner > #siteBannerSlides #bannerSlidesThird{
+    width:960px;
+}
+
+#siteBannerSlides{
+    position:relative;
+}
+#siteBannerSlides > ul.slidesjs-pagination{
+    /*border:2px solid red;*/
+    position:absolute;
+    bottom:10px;
+    z-index:20;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100%; /*只有在绝对定位的时候需要给一个宽度*/
+}
+#siteBannerSlides > ul.slidesjs-pagination >li{
+    margin:0 10px;
+    background:transparent;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+#siteBannerSlides > ul.slidesjs-pagination >li>a{
+    border:1px solid #1B9AF7;
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    text-decoration:none;
+    color:white;
+    font-size:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+@media screen and (max-width:420px){
+    #siteBannerSlides > ul.slidesjs-pagination >li>a{
+        width:15px;
+        height:15px;
+        font-size:12px;
+    }
+}
+
+#siteBannerSlides > ul.slidesjs-pagination >li>a:active{
+    background:#1B9AF7;
+}
+
+#siteBannerSlides .slidesjs-navigation{
+    position:absolute;
+    transform:translate(0,-50%);
+    top:50%;
+    left:0;
+    text-decoration:none;
+    color:white;
+    font-size:20px;
+    z-index:10;
+}
+
+#siteBannerSlides .slidesjs-previous{
+    border:2px solid #1B9AF7;
+    border-radius:10px;
+    width:100px;
+    height:50px;
+    padding-top:9px;
+    text-align:center;
+}
+
+@media screen and (max-width:420px){
+    #siteBannerSlides .slidesjs-previous{
+        border:1px solid #1B9AF7;
+        border-radius:5px;
+        width:60px;
+        height:30px;
+        font-size:12px; /*不一定生效*/
+        padding-top:5px;
+    }
+}
+
+
+#siteBannerSlides .slidesjs-previous:active{
+    background:#1B9AF7;
+}
+#siteBannerSlides .slidesjs-next{
+    border:2px solid #1B9AF7;
+    border-radius:10px;
+    left:auto;
+    right:0;
+    width:100px;
+    height:50px;
+    padding-top:9px;
+    text-align:center;
+}
+
+@media screen and (max-width:420px){
+    #siteBannerSlides .slidesjs-next{
+        border:1px solid #1B9AF7;
+        border-radius:5px;
+        right:1px;
+        width:60px;
+        height:30px;
+        padding-top:5px;
+        font-size:12px;
+    }
+    
+}
+
+
+#siteBannerSlides .slidesjs-next:active{
+    background:#1B9AF7;
+}
+
+
+
+
+
+
+
+
+
+
+#introduce{
+    margin-top:5px;
+}
+
+@media screen and (max-width:420px){
+    #introduce{
+        margin-top:2px;
+    }
+}
+
+#introduce > ul{
+    max-width:960px;
+    margin:0 auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:row;
+    flex-wrap:wrap;
+    
+}
+
+#introduce ul>li{
+    margin:10px;
+    display:flex;
+}
+
+@media screen and (max-width:420px){
+    #introduce ul>li{
+        display:block;
+        margin:5px;
+    }
+}
+
+#introduce ul>li:nth-child(odd)>p{
+    order:1;
+}
+#introduce ul>li:nth-child(odd)>img{
+    order:2;
+}
+#introduce ul>li:nth-child(even)>p{
+    order:2;
+}
+#introduce ul>li:nth-child(even)>img{
+    order:1;
+}
+
+#introduce ul>li>img{
+    width:400px;
+    height:300px;
+    border-radius:10px;
+}
+
+
+#introduce ul>li>img:hover{
+    transform:scale(1.05,1.05);
+    transition:all .2s;
+}
+
+
+#introduce ul >li>p{
+    /*border:1px solid blue;*/
+    height:300px;
+    width:400px;
+    background:#cee9fd;
+    font-size:16px;
+    border-radius:10px;
+    padding:30px;
+    margin:0 10px;
+    transition:0.5s;
+}
+
+@media screen and (max-width:420px){
+    #introduce ul >li>p{
+       margin:0;
+    }
+}
+
+
+
+#introduce ul>li:hover>p{
+    display:block;
+    background:#6bbefa;
+    transition:all .5s;
+}
+
+
+#contact{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:10px;
+}
+#contact > .inner{
+    width:960px;
+    height:500px;
+    background:url('http://i2.muimg.com/588926/ef3058895ddc754c.jpg');
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+}
+@media screen and (max-width:420px){
+    #contact > .inner{
+        height:300px;
+        font-size:16px;
+    }
+}
+
+
+
+#album{
+    padding:2em 0;
+    
+}
+#album > #inner{
+    margin:0 auto;
+    max-width:900px;
+}
+#album h2{
+    text-align:center;
+    margin-bottom:1em;
+}
+#album ul{
+    margin-left:30px;
+}
+#album img{
+    width:200px;  /*这里动了*/
+    height:200px;
+}
+
+
+@media screen and (max-width:420px){
+    #album ul{
+        margin-left:10px;
+    }
+    #album img{
+        width:100px;
+        height:100px;
+    }
+}
+#album .first{
+    background:url('http://5.blog.xuite.net/5/b/6/c/14645713/blog_1666196/txt/61543639/0.jpg');
+    background-size:cover;
+}
+#album .second{
+    background:url('http://pica.nipic.com/2007-09-11/2007911161343380_2.jpg');
+    background-size:cover;
+}
+#album .third{
+    background:url('http://www.1111.com.tw/zone/comic/images/uploadimg/photo20120223200263.jpg');
+    background-size:cover;
+}
+#album .fourth{
+    background:url('https://s-media-cache-ak0.pinimg.com/564x/12/42/58/124258a4667dabe269c2754a7d4c4568.jpg');
+    background-size:cover;
+}
+
+#album .fifth{
+    background:url('http://pics14.yamedia.tw/41/userfile/t/taipeichang/blog/152245fdab6628.png');
+    background-size:cover;
+}
+#album .sixth{
+    background:url('http://www.yuhing.edu.tw/images/20151203031312.png');
+    background-size:cover;
+}
+#album .seventh{
+    background:url('http://dl.stickershop.line.naver.jp/products/0/0/12/534/android/stickers/2443.png');
+    background-size:cover;
+}
+#album .eighth{
+    background:url('https://www.1111.com.tw/zone/comic/images/uploadimg/photo20120223200253.jpg');
+    background-size:cover;
+}
+#album .nineth{
+    background:url('http://static.blog.sina.com.tw/myimages/181/38837/images/1175966553_0.jpg');
+    background-size:cover;
+}
+#album .tenth{
+    background:url('https://assets.growingio.com/blog/storage/image/b39ee2f7619df5ef24c548430f949d05.jpeg');
+    background-size:cover;
+}
+
+
+footer{
+    padding:20px;
+    background:#ddd;
+    text-align:center;
+}
